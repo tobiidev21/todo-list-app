@@ -1,0 +1,125 @@
+############################
+# OS
+############################
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+.Spotlight-V100
+.Trashes
+._*
+
+# Linux
+*~
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+
+############################
+# Editor files
+############################
+
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+nbproject
+
+############################
+# Node & npm
+############################
+
+node_modules
+package-lock.json
+.pnpm-debug.log*
+npm-debug.log*
+lerna-debug.log*
+
+############################
+# Bun (solo en frontend)
+############################
+
+bun.lockb
+
+############################
+# Build output
+############################
+
+dist
+dist-ssr
+build
+lib-cov
+results
+coverage
+exports
+
+############################
+# Logs & Misc
+############################
+
+logs
+*.log
+*.tmp
+*.out
+*.pid
+node.log
+*.local
+.tsbuildinfo
+.eslintcache
+.node_history
+
+############################
+# Package types
+############################
+
+*.7z
+*.csv
+*.dat
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.swo
+*.swp
+*.swn
+*.swm
+
+############################
+# Strapi
+############################
+
+.env
+license.txt
+public/uploads/*
+!public/uploads/.gitkeep
+.strapi
+.strapi-updater.json
+.strapi-cloud.json
+
+############################
+# Custom
+############################
+
+ssl

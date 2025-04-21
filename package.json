@@ -1,0 +1,17 @@
+{
+  "name": "to-do-list-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"bun run dev --cwd frontend\" \"npm run develop --prefix backend\"",
+    "frontend": "bun run dev --cwd frontend",
+    "backend": "npm run develop --prefix backend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "9.1.2"
+  }
+}
