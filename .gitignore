@@ -1,5 +1,5 @@
 ############################
-# OS
+# SO (archivos temporales del sistema)
 ############################
 
 # macOS
@@ -19,13 +19,9 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 $RECYCLE.BIN/
-*.cab
-*.msi
-*.msm
-*.msp
 
 ############################
-# Editor files
+# Editores y herramientas
 ############################
 
 .vscode/*
@@ -39,38 +35,35 @@ $RECYCLE.BIN/
 nbproject
 
 ############################
-# Node & npm
+# Node.js / Bun / npm
 ############################
 
-node_modules
+node_modules/
+bun.lockb
 package-lock.json
-.pnpm-debug.log*
 npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
 lerna-debug.log*
 
 ############################
-# Bun (solo en frontend)
+# Build / distribución
 ############################
 
-bun.lockb
+dist/
+dist-ssr/
+build/
+coverage/
+lib-cov/
+results/
 
 ############################
-# Build output
+# Logs / temporales
 ############################
 
-dist
-dist-ssr
-build
-lib-cov
-results
-coverage
-exports
-
-############################
-# Logs & Misc
-############################
-
-logs
+logs/
 *.log
 *.tmp
 *.out
@@ -82,7 +75,7 @@ node.log
 .node_history
 
 ############################
-# Package types
+# Archivos comprimidos / ejecutables / pesados
 ############################
 
 *.7z
@@ -107,19 +100,8 @@ node.log
 *.swm
 
 ############################
-# Strapi
+# Archivos sensibles
 ############################
 
 .env
-license.txt
-public/uploads/*
-!public/uploads/.gitkeep
-.strapi
-.strapi-updater.json
-.strapi-cloud.json
-
-############################
-# Custom
-############################
-
-ssl
+ssl/
