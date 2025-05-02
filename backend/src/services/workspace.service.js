@@ -1,4 +1,4 @@
-import db from '../db/connection'
+import db from '../db/connection.js'
 
 // select functions
 export function queryAllWorkspaces () {
@@ -7,7 +7,7 @@ export function queryAllWorkspaces () {
 }
 
 export function queryWorkspace (id) {
-  const stmt = db.prepare('SELECT FROM workspaces WHERE id = ?')
+  const stmt = db.prepare('SELECT * FROM workspaces WHERE id = ?')
   return stmt.get(id)
 }
 

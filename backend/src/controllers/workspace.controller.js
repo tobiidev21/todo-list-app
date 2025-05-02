@@ -1,4 +1,4 @@
-import { deleteWorkspace, insertWorkspace, queryAllWorkspaces, queryWorkspace, updateWorkspace } from '../services/workspace.service'
+import { deleteWorkspace, insertWorkspace, queryAllWorkspaces, queryWorkspace, updateWorkspace } from '../services/workspace.service.js'
 
 export function getWorkspaces (req, res) {
   try {
@@ -23,9 +23,8 @@ export function getWorkspace (req, res) {
 
 export function createWorkspace (req, res) {
   try {
-    const id = req.params.id
     const { name } = req.body
-    const workspaceId = insertWorkspace(id, name)
+    const workspaceId = insertWorkspace(name)
     res.status(201).json({ id: workspaceId, name })
   } catch (e) {
     console.log(e)
