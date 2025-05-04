@@ -1,138 +1,35 @@
-# 📝 To-Do List App
+📋 Fullstack To-Do List App
+A modern fullstack to-do list application that lets users add, edit, complete, and delete tasks efficiently. Built with a clean client-server architecture and a focus on simplicity, speed, and maintainability.
 
-Una aplicación de lista de tareas desarrollada con una arquitectura **fullstack moderna**:
+🛠️ Technologies Used
+Frontend:
 
-- **Frontend:** Vite + React + Bun
-- **Backend:** Strapi + Node.js (con npm)
-- **Monorepo:** estructura unificada para frontend y backend
+React – Declarative and component-based UI.
 
----
+Zustand – Lightweight global state management.
 
-## 📁 Estructura del proyecto
+React Router – Client-side routing.
 
-```txt
-to-do-list-app/
-├── frontend/          # Aplicación React (Vite + Bun)
-│   ├── bun.lockb
-│   ├── index.html
-│   ├── src/
-│   └── ...
-├── backend/           # API CMS Strapi (npm)
-│   ├── package.json
-│   ├── config/
-│   ├── src/
-│   └── ...
-├── .gitignore         # Configurado para ambos entornos
-├── package.json       # Scripts y configuración general (opcional)
-└── README.md          # Este archivo
-```
+Tailwind CSS – Utility-first modern styling.
 
----
+React Hook Form – Performant form handling.
 
-## 🚀 Instalación
+Vite – Lightning-fast build tool.
 
-### 1. Clonar el repositorio
+Backend:
 
-```bash
-git clone https://github.com/tu-usuario/to-do-list-app.git
-cd to-do-list-app
-```
+Express.js – Minimalist REST API framework.
 
-### 2. Configurar el backend
+SQLite – Lightweight embedded database.
 
-```bash
-cd backend
-npm install
-```
+✨ Features
+Add, edit, complete, and delete tasks.
 
-### 3. Configurar el frontend
+Persistent storage using SQLite.
 
-```bash
-cd ../frontend
-bun install
-```
+Responsive and fast UI.
 
----
+Clear separation between frontend and backend.
 
-## 🧑‍💻 Desarrollo
-
-### Levantar el backend (Strapi)
-
-```bash
-cd backend
-npm run develop
-```
-
-> ⚠️ Asegúrate de tener una base de datos SQLite configurada o tu `.env` preparado.
-
-### Levantar el frontend (Vite)
-
-```bash
-cd frontend
-bun run dev
-```
-
----
-
-## 🔧 Comandos útiles
-
-Desde la raíz podés ejecutar estos scripts si los agregás en el `package.json`:
-
-```json
-{
-  "scripts": {
-    "dev": "concurrently \"npm run dev --prefix backend\" \"bun run dev --prefix frontend\""
-  },
-  "devDependencies": {
-    "concurrently": "^8.0.0"
-  }
-}
-```
-
-Instalá `concurrently` si aún no lo tenés:
-
-```bash
-npm install --save-dev concurrently
-```
-
-Entonces simplemente podés hacer:
-
-```bash
-npm run dev
-```
-
----
-
-## 📦 Build para producción
-
-### Frontend
-
-```bash
-cd frontend
-bun run build
-```
-
-### Backend
-
-El backend normalmente no necesita build (es ejecutado como Node.js), pero si usás Strapi Cloud o despliegues, podés revisar la documentación oficial.
-
----
-
-## 🧠 Notas adicionales
-
-- El archivo `.gitignore` está adaptado para esta estructura.
-- El frontend usa **Bun** por velocidad en desarrollo, pero puede adaptarse a `npm` si lo necesitás.
-- Strapi requiere Node >=14 y <20. Verificá tu versión con `node -v`.
-
----
-
-## 🧑‍🎓 Autor
-
-**Tu Nombre**  
-[GitHub](https://github.com/tu-usuario) | [LinkedIn](https://linkedin.com/in/tu-perfil)
-
----
-
-## 📃 Licencia
-
-MIT
+🚀 Purpose
+This project showcases how to build a complete fullstack application using popular tools. It’s a great learning resource for understanding modern state management, routing, styling, form handling, and database integration.
