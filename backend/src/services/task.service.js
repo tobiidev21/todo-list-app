@@ -38,10 +38,8 @@ export function updateTask (id, fieldToModify, value) {
 }
 
 export function replaceTask (id, fields, values) {
-  // Lista blanca de campos permitidos
   const allowedFields = ['title', 'description', 'progress']
 
-  // Validaciones
   if (!Array.isArray(fields) || !Array.isArray(values)) {
     throw new Error('Los campos y valores deben ser arrays')
   }
@@ -56,12 +54,11 @@ export function replaceTask (id, fields, values) {
     }
   }
 
-  // SET del SQL: "title = ?, description = ?, ..."
+  // SET de SQL: "title = ?, description = ?, ..."
   const setClause = fields.map(field => `${field} = ?`).join(', ')
 
   const stmt = db.prepare(`UPDATE tasks SET ${setClause} WHERE id = ?`)
   const info = stmt.run(...values, id)
-  console.log()
 
   return info.changes // número de filas modificadas
 }

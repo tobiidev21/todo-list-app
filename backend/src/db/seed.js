@@ -21,4 +21,4 @@ insertTask.run('Pasear al perro', 'Dar una vuelta por el parque', 'completed', w
 insertTask.run('Responder emails', 'Revisar y contestar correos del proyecto', 'to do', workspace2)
 insertTask.run('Hacer presentación', 'Preparar slides para la reunión', 'to do', workspace2)
 
-console.log('🌱 Base de datos sembrada con éxito!')
+console.log('Base de datos sembrada con éxito!')
