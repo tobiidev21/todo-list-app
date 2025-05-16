@@ -1,33 +1,58 @@
-import db from './connection.js' // Ajusta la ruta a donde esté el archivo original con la conexión
+import db from './connection.js' // Asegúrate de poner la ruta correcta
+import bcrypt from 'bcrypt'
 
-// Limpia las tablas (opcional, útil en desarrollo)
+// Hash de contraseña de ejemplo
+const passwordHash = bcrypt.hashSync('password123', 10)
+
+// Limpiar tablas antes de insertar (opcional, útil para desarrollo)
 db.exec(`
   DELETE FROM tasks;
   DELETE FROM users;
   DELETE FROM workspaces;
-  VACUUM;
 `)
 
 // Insertar usuarios
 const insertUser = db.prepare(`
-  INSERT INTO users (name, email) VALUES (?, ?)
+  INSERT INTO users (name, email, password) VALUES (?, ?, ?)
 `)
-insertUser.run('Alice', 'alice@example.com')
-insertUser.run('Bob', 'bob@example.com')
+insertUser.run('Alice Doe', 'alice@example.com', passwordHash)
+insertUser.run('Bob Smith', 'bob@example.com', passwordHash)
 
-// Insertar espacios de trabajo
+// Insertar workspaces
 const insertWorkspace = db.prepare(`
   INSERT INTO workspaces (name) VALUES (?)
 `)
-const workspace1 = insertWorkspace.run('Marketing')
-const workspace2 = insertWorkspace.run('Development')
+insertWorkspace.run('Proyecto Alpha')
+insertWorkspace.run('Proyecto Beta')
+
+// Obtener IDs de los workspaces para usarlos en las tareas
+const workspaces = db.prepare('SELECT * FROM workspaces').all()
 
 // Insertar tareas
 const insertTask = db.prepare(`
-  INSERT INTO tasks (title, description, progress, workspaceId) VALUES (?, ?, ?, ?)
+  INSERT INTO tasks (title, description, progress, workspaceId)
+  VALUES (?, ?, ?, ?)
 `)
-insertTask.run('Landing page', 'Create marketing landing page', 'in-progress', workspace1.lastInsertRowid)
-insertTask.run('Fix bug #123', 'Fix login issue on Safari', 'todo', workspace2.lastInsertRowid)
-insertTask.run('Write documentation', 'Document the auth system', 'done', workspace2.lastInsertRowid)
 
-console.log('Database seeded successfully.')
+insertTask.run(
+  'Diseñar UI',
+  'Crear maquetas de la interfaz para escritorio',
+  'in_progress',
+  workspaces[0].id
+)
+
+insertTask.run(
+  'Configurar base de datos',
+  'Establecer esquema inicial con SQLite',
+  'completed',
+  workspaces[0].id
+)
+
+insertTask.run(
+  'Revisar código',
+  'Auditoría de seguridad para autenticación',
+  'todo',
+  workspaces[1].id
+)
+
+console.log('🌱 Seed ejecutada correctamente.')
